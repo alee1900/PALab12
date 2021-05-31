@@ -1,3 +1,6 @@
+/**
+ * Class to invoke static methods
+ */
 public class TestClass2 {
     @Test
     public static void method1() {

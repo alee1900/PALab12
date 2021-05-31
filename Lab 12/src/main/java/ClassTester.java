@@ -31,13 +31,13 @@ public class ClassTester {
 
                 String classFileName = new File(classPath).getName();
                 classFileName = classFileName.substring(0, classFileName.indexOf('.'));
-                Class<?> clazz = Class.forName("testclasses." + classFileName, false, cl);
-                for (Method method : clazz.getMethods()) {
+                Class<?> aClass = Class.forName("testclasses." + classFileName, false, cl);
+                for (Method method : aClass.getMethods()) {
                     if (method.isAnnotationPresent(Test.class)) {
                         if (Modifier.isStatic(method.getModifiers())) {
                             if (method.getParameterCount() == 0) {
                                 method.invoke(null);
-                                System.out.println(clazz + method.getName());
+                                System.out.println(aClass + method.getName());
                                 successTests++;
                             }
                         }
